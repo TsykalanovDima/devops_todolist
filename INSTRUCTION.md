@@ -17,3 +17,4 @@ From the project root:
 
 ```bash
 docker build -t todoapp .
+```
