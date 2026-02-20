@@ -1,12 +1,13 @@
 ARG PYTHON_IMAGE=3.12-slim
 
+# ---------- build stage ----------
 FROM python:${PYTHON_IMAGE} AS build
 WORKDIR /app
 
 ENV PYTHONUNBUFFERED=1
 
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 
 # ---------- run stage ----------
 FROM python:${PYTHON_IMAGE} AS run
